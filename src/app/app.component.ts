@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
   }
 
   speakStep(currentStep: Step) {
-    const utterance = `${currentStep.title}  ${currentStep.intro}`;
+    const utterance = `${currentStep.title} ! ${currentStep.intro}`;
     this.speak(utterance);
   }
 
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
 
   speak(text: string) {
     if (this.synth.speaking) {
-      console.error('already speaking');
+      console.log('already speaking.. cancelling current utterance');
       this.synth.cancel();
       // return;
     }
